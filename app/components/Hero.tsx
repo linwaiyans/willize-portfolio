@@ -2,14 +2,20 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Mail, ArrowDown, MapPin, Sparkles, FileText, Download } from "lucide-react";
+import {
+    Mail,
+    ArrowDown,
+    MapPin,
+    Sparkles,
+    FileText,
+    Download,
+} from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./BrandIcons";
 
 const roles = [
-    "Full Stack Web Developer",
+    "Fullstack Developer",
     "Software Developer",
     "Frontend Developer",
-    "IEEE Published Researcher",
 ];
 
 export default function Hero() {
