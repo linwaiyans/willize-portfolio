@@ -71,7 +71,7 @@ export default function Navbar() {
             >
               <WillizeLogo size={36} />
             </span>
-            <span className="gradient-text hidden sm:inline tracking-tight">Willize</span>
+            <span className="gradient-text tracking-tight">Willize</span>
           </button>
 
           <ul className="hidden lg:flex items-center gap-1">
@@ -98,7 +98,7 @@ export default function Navbar() {
             <ThemeToggle />
             <button
               onClick={() => handleNav("#contact")}
-              className="hidden sm:inline-flex px-5 py-2 rounded-full text-sm font-semibold text-white transition-all duration-300"
+              className="hidden min-[420px]:inline-flex px-5 py-2 rounded-full text-sm font-semibold text-white transition-all duration-300"
               style={{ background: "var(--accent)", boxShadow: "0 6px 16px rgba(37,99,235,0.3)" }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = "var(--accent-hover)";

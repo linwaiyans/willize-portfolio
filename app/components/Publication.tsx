@@ -22,45 +22,42 @@ export default function Publication() {
         />
 
         <Reveal variant="scale">
-          <div className="gradient-border">
-            <div className="rounded-3xl overflow-hidden">
-              {/* Animated fire-themed banner */}
-              <div className="relative">
-                <FireDetectionBanner tall />
-                {/* Overlaid text */}
-                <div className="absolute inset-0 flex items-end p-8 md:p-12 pointer-events-none">
-                  <div className="relative">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-bold mb-4 border border-white/30">
-                      <Award size={14} />
-                      IEEE Xplore Published
-                    </div>
-                    <h3 className="text-2xl md:text-4xl font-black text-white mb-3 leading-tight"
-                      style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}>
-                      Big Data Based House Fire <br className="hidden md:inline" />
-                      Detection and Alarm System
-                    </h3>
-                    <p className="text-white/95 text-sm md:text-base mb-4"
-                      style={{ textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
-                      Presented at the 10th International Conference on Big Data Analytics (ICBDA 2025)
-                    </p>
-                    <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/95"
-                      style={{ textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
-                      <span className="flex items-center gap-1.5">
-                        <Calendar size={14} /> March 2025
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <MapPin size={14} /> Singapore
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <Award size={14} /> Excellent Oral Presentation
-                      </span>
-                    </div>
-                  </div>
+          <div className="card card-hover overflow-hidden rounded-3xl">
+            {/* Header: animated fire banner as background, content determines height */}
+            <div className="relative">
+              <FireDetectionBanner tall fill />
+              {/* Title content sits in normal flow so banner grows with it on mobile */}
+              <div className="relative p-6 md:p-12 min-h-[22rem] md:min-h-80 flex flex-col justify-end">
+                <div className="inline-flex self-start items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-bold mb-4 border border-white/30">
+                  <Award size={14} />
+                  IEEE Xplore Published
+                </div>
+                <h3 className="text-xl sm:text-2xl md:text-4xl font-black text-white mb-3 leading-tight"
+                  style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}>
+                  Big Data Based House Fire <br className="hidden md:inline" />
+                  Detection and Alarm System
+                </h3>
+                <p className="text-white/95 text-sm md:text-base mb-4"
+                  style={{ textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
+                  Presented at the 10th International Conference on Big Data Analytics (ICBDA 2025)
+                </p>
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/95"
+                  style={{ textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
+                  <span className="flex items-center gap-1.5">
+                    <Calendar size={14} /> March 2025
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <MapPin size={14} /> Singapore
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <Award size={14} /> Excellent Oral Presentation
+                  </span>
                 </div>
               </div>
+            </div>
 
-              {/* Body */}
-              <div className="p-8 md:p-12 bg-[var(--card)]">
+            {/* Body */}
+            <div className="p-8 md:p-12">
                 <div className="grid md:grid-cols-3 gap-7 mb-8">
                   <div className="md:col-span-2 space-y-6">
                     <div>
@@ -166,7 +163,6 @@ export default function Publication() {
                   Read on IEEE Xplore
                   <ExternalLink size={16} className="transition-transform group-hover:rotate-12" />
                 </a>
-              </div>
             </div>
           </div>
         </Reveal>

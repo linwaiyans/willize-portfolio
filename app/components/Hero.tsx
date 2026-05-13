@@ -13,7 +13,7 @@ import {
 import { GithubIcon, LinkedinIcon } from "./BrandIcons";
 
 const roles = [
-    "Fullstack Developer",
+    "Full Stack Developer",
     "Software Developer",
     "Frontend Developer",
 ];

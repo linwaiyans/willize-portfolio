@@ -4,6 +4,7 @@ import { Award, Languages as LangIcon, Briefcase } from "lucide-react";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 import { GoogleLogo, CVSHealthLogo } from "./CompanyLogos";
+import FlagBadge from "./FlagBadge";
 
 const certificates = [
   {
@@ -22,10 +23,10 @@ const certificates = [
   },
 ];
 
-const languages = [
-  { name: "English", level: "Full Professional", percent: 95 },
-  { name: "Burmese", level: "Native", percent: 100 },
-  { name: "Korean", level: "Elementary", percent: 35 },
+const languages: { name: string; level: string; percent: number; code: "GB" | "MM" | "KR" }[] = [
+  { name: "English", level: "Full Professional", percent: 95, code: "GB" },
+  { name: "Burmese", level: "Native", percent: 100, code: "MM" },
+  { name: "Korean", level: "Elementary", percent: 35, code: "KR" },
 ];
 
 export default function Credentials() {
@@ -83,12 +84,15 @@ export default function Credentials() {
             <div className="card p-6 space-y-5">
               {languages.map((l, i) => (
                 <Reveal key={l.name} delay={i * 70}>
-                  <div className="flex items-center justify-between mb-2">
-                    <span>
-                      <span className="block leading-tight font-semibold">{l.name}</span>
-                      <span className="block text-xs font-normal" style={{ color: "var(--muted)" }}>{l.level}</span>
+                  <div className="flex items-center justify-between mb-2 gap-3">
+                    <span className="flex items-center gap-3 min-w-0">
+                      <FlagBadge code={l.code} size={32} />
+                      <span className="min-w-0">
+                        <span className="block leading-tight font-semibold">{l.name}</span>
+                        <span className="block text-xs font-normal" style={{ color: "var(--muted)" }}>{l.level}</span>
+                      </span>
                     </span>
-                    <span className="text-xs font-mono font-bold" style={{ color: "var(--accent)" }}>{l.percent}%</span>
+                    <span className="text-xs font-mono font-bold shrink-0" style={{ color: "var(--accent)" }}>{l.percent}%</span>
                   </div>
                   <div className="h-2 rounded-full overflow-hidden" style={{ background: "var(--border)" }}>
                     <div
